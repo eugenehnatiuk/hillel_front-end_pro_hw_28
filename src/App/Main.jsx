@@ -4,7 +4,7 @@ import Logo from './Logo.jsx';
 import '../style/main.scss';
 
 
-const imgUrl = '../images/main_photo.jpg';
+const imgUrl = './images/main_photo.jpg';
 
 const Main = ({sectionClass}) => {
   return (
