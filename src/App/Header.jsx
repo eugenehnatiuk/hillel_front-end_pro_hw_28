@@ -2,7 +2,7 @@ import React from 'react';
 import MenuItem from './Menuitem.jsx';
 import '../style/header.scss';
 
-const menuItemProps = [
+const menuProps = [
   ['Main', 'header__navmenu-item'],
   ['FAQ', 'header__navmenu-item'],
   ['Content', 'header__navmenu-item'],
@@ -13,8 +13,8 @@ const Header = ({ headerClass, navClass, navMenuListClass }) => (
   <header className={headerClass}>
     <nav className={navClass}>
       <ul className={navMenuListClass}>
-        {menuItemProps.map(([title, cssClass]) => (
-          <MenuItem key={title} navMenuItem={cssClass} title={title} />
+        {menuProps.map(([title, cssClass]) => (
+          <MenuItem navMenuItem={cssClass} title={title} />
         ))}
       </ul>
     </nav>
@@ -22,3 +22,4 @@ const Header = ({ headerClass, navClass, navMenuListClass }) => (
 );
 
 export default Header;
+
