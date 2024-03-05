@@ -1,18 +1,24 @@
 import React from 'react';
-import MenuItem from './Menuitem.jsx'
+import MenuItem from './Menuitem.jsx';
 import '../style/header.scss';
+
+const menuItemProps = [
+  ['Main', 'header__navmenu-item'],
+  ['FAQ', 'header__navmenu-item'],
+  ['Content', 'header__navmenu-item'],
+  ['Contacts', 'header__navmenu-item'],
+];
 
 const Header = ({ headerClass, navClass, navMenuListClass }) => (
   <header className={headerClass}>
     <nav className={navClass}>
       <ul className={navMenuListClass}>
-        <MenuItem navMenuItem="header__navmenu-item" title="Main" />
-        <MenuItem navMenuItem="header__navmenu-item" title="FAQ" />
-        <MenuItem navMenuItem="header__navmenu-item" title="Content" />
-        <MenuItem navMenuItem="header__navmenu-item" title="Contacts" />
+        {menuItemProps.map(([title, cssClass]) => (
+          <MenuItem key={title} navMenuItem={cssClass} title={title} />
+        ))}
       </ul>
     </nav>
   </header>
 );
 
-export default Header
+export default Header;
