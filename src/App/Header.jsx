@@ -14,7 +14,7 @@ const Header = ({ headerClass, navClass, navMenuListClass }) => (
     <nav className={navClass}>
       <ul className={navMenuListClass}>
         {menuProps.map(([title, cssClass]) => (
-          <MenuItem navMenuItem={cssClass} title={title} />
+          <MenuItem key={title} navMenuItem={cssClass} title={title} />
         ))}
       </ul>
     </nav>
